@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<RevitAddIns>
+	<AddIn Type="Application">
+		<Name>Challenge ENG</Name>
+		<Assembly>ChallengeENG\ChallengeENG.dll</Assembly>
+		<AddInId>3ba92a3d-437f-40be-a8a7-7f7b1db15e7e</AddInId>
+		<FullClassName>ChallengeENG.ChallengeENGApplication</FullClassName>
+		<VendorId>Johan Morales</VendorId>
+		<VendorDescription>Johan Morales</VendorDescription>
+		<Publisher></Publisher>
+	</AddIn>
+</RevitAddIns>

@@ -1,0 +1,73 @@
+﻿<Window
+    x:Class="ChallengeENG.Views.MainView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:ChallengeENG.ViewModels"
+    Title="MainView"
+    Width="800"
+    Height="450"
+    d:DataContext="{d:DesignInstance viewModels:MainViewModel,
+                                     IsDesignTimeCreatable=False}"
+    mc:Ignorable="d">
+
+    <Grid
+        Height="385"
+        Margin="0,49,0,0"
+        VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <!--  Agregado para los botones de Isolate y Select  -->
+        </Grid.RowDefinitions>
+
+        <!--  Botón para cargar los parámetros  -->
+        <Button
+            Grid.Row="0"
+            Width="150"
+            Height="40"
+            Margin="0,0,0,10"
+            Command="{Binding LoadParametersCommand}"
+            Content="Cargar Parámetros" />
+
+        <!--  ComboBox para seleccionar el parámetro  -->
+        <ComboBox
+            Grid.Row="1"
+            Width="300"
+            Margin="0,0,0,10"
+            VerticalAlignment="Center"
+            IsEditable="True"
+            ItemsSource="{Binding ParameterNames}"
+            SelectedItem="{Binding SelectedParameter, UpdateSourceTrigger=PropertyChanged}" />
+
+        <!--  ComboBox para seleccionar el valor del parámetro  -->
+        <ComboBox
+            Grid.Row="2"
+            Width="300"
+            Margin="0,0,0,10"
+            VerticalAlignment="Center"
+            IsEditable="True"
+            ItemsSource="{Binding ParameterValues}"
+            SelectedItem="{Binding SelectedParameterValue, UpdateSourceTrigger=PropertyChanged}" />
+
+        <!--  Botones para las acciones de Isolate y Select  -->
+        <StackPanel
+            Grid.Row="3"
+            HorizontalAlignment="Center"
+            Orientation="Horizontal">
+            <Button
+                Width="120"
+                Height="40"
+                Command="{Binding IsolateViewCommand}"
+                Content="Isolate in View" />
+            <Button
+                Width="120"
+                Height="40"
+                Command="{Binding SelectCommand}"
+                Content="Select" />
+        </StackPanel>
+    </Grid>
+</Window>

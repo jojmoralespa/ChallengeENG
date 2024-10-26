@@ -1,0 +1,69 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\johan.morales\\proyectos\\test revit api\\TestENG\\TestENG\\ChallengeENG.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\johan.morales\\proyectos\\test revit api\\TestENG\\TestENG\\ChallengeENG.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\johan.morales\\proyectos\\test revit api\\TestENG\\TestENG\\ChallengeENG.csproj",
+        "projectName": "ChallengeENG",
+        "projectPath": "C:\\Users\\johan.morales\\proyectos\\test revit api\\TestENG\\TestENG\\ChallengeENG.csproj",
+        "packagesPath": "C:\\Users\\johan.morales\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\johan.morales\\proyectos\\test revit api\\TestENG\\TestENG\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\johan.morales\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net4.8"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "targetAlias": "net4.8",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "targetAlias": "net4.8",
+          "dependencies": {
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.3.2, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Revit_All_Main_Versions_API_x64": {
+              "target": "Package",
+              "version": "[2023.0.0, )"
+            },
+            "WPF-UI": {
+              "target": "Package",
+              "version": "[3.0.5, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

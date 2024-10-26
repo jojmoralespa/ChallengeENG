@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<UseWPF>true</UseWPF>
+		<TargetFramework>net4.8</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<LangVersion>12</LangVersion>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
+		<PackageReference Include="Revit_All_Main_Versions_API_x64" Version="2023.0.0" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Resources\Icons\" />
+	  <Folder Include="Resources\Styles\" />
+	</ItemGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)' == 'Debug'">
+		<Exec Command="xcopy /y /E /I &quot;$(TargetDir)*.*&quot; &quot;$(APPDATA)\Autodesk\Revit\Addins\2023\ChallengeENG&quot;&#xD;&#xA;xcopy /y &quot;$(ProjectDir)ChallengeENG.addin&quot; &quot;$(APPDATA)\Autodesk\Revit\Addins\2023&quot;&#xD;&#xA;" />
+	</Target>
+
+</Project>
