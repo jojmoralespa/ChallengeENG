@@ -27,6 +27,9 @@ namespace ChallengeENG.ViewModels
         public ICommand IsolateViewCommand { get; }
         public ICommand SelectCommand { get; }
 
+        /// <summary>
+        /// All interactions between the logic in Models and the buttons and combobox in  MainView
+        /// </summary>
         public MainViewModel(ModelScanner modelScanner, ElementActions elementActions, ViewActions viewActions)
         {
             LoadParametersCommand = new RelayCommand(() =>

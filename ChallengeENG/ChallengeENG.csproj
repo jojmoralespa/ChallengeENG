@@ -13,8 +13,11 @@
 		<PackageReference Include="Revit_All_Main_Versions_API_x64" Version="2023.0.0" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="Resources\Icons\" />
-	  <Folder Include="Resources\Styles\" />
+		<Folder Include="Resources\Styles\" />
+	</ItemGroup>
+	<ItemGroup>
+		<Resource Include="Resources\Icons\icons8-parameter-64.png" />
+		<Resource Include="Resources\Icons\icons8-parameter-32.png" />
 	</ItemGroup>
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)' == 'Debug'">

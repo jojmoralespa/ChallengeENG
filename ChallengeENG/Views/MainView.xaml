@@ -6,15 +6,15 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:ChallengeENG.ViewModels"
     Title="MainView"
-    Width="800"
-    Height="450"
+    Width="410"
+    Height="418"
     d:DataContext="{d:DesignInstance viewModels:MainViewModel,
                                      IsDesignTimeCreatable=False}"
     mc:Ignorable="d">
 
     <Grid
-        Height="385"
-        Margin="0,49,0,0"
+        Height="353"
+        Margin="0,15,0,0"
         VerticalAlignment="Top">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -22,20 +22,38 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Button
-            Grid.Row="0"
-            Width="150"
-            Height="40"
-            Margin="0,0,0,10"
-            Command="{Binding LoadParametersCommand}"
-            Content="Cargar Parámetros" />
+        <StackPanel>
+            <Image
+                Width="64"
+                Height="64"
+                Source="pack://application:,,,/ChallengeENG;component/Resources/Icons/icons8-parameter-64.png" />
+            <TextBlock
+                Width="297"
+                Margin="0,5,0,5"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="10"
+                FontWeight="Light"
+                Foreground="#2B2D42"
+                Text="you must load parameters first in a valid view (3D Views, Floor Plans and Reflected Ceiling Plans)"
+                TextAlignment="Center"
+                TextWrapping="Wrap" />
+            <Button
+                Grid.Row="0"
+                Width="150"
+                Height="40"
+                Margin="0,10,0,10"
+                Command="{Binding LoadParametersCommand}"
+                Content="load parameters" />
+        </StackPanel>
         <StackPanel Grid.Row="1" Margin="0,10">
             <TextBlock
+                Width="297"
                 Margin="0,0,0,5"
                 FontSize="14"
                 FontWeight="Bold"
                 Foreground="#2B2D42"
-                Text="Seleccione un Parámetro:" />
+                Text="Select parameter:" />
             <ComboBox
                 Width="300"
                 VerticalAlignment="Center"
@@ -45,11 +63,12 @@
         </StackPanel>
         <StackPanel Grid.Row="2" Margin="0,10">
             <TextBlock
+                Width="298"
                 Margin="0,0,0,5"
                 FontSize="14"
                 FontWeight="Bold"
                 Foreground="#2B2D42"
-                Text="Seleccione un Valor:" />
+                Text="Select parameter value:" />
             <ComboBox
                 Width="300"
                 VerticalAlignment="Center"
@@ -65,11 +84,13 @@
             <Button
                 Width="120"
                 Height="40"
+                Margin="0,0,10,0"
                 Command="{Binding IsolateViewCommand}"
                 Content="Isolate in View" />
             <Button
                 Width="120"
                 Height="40"
+                Margin="10,0,0,0"
                 Command="{Binding SelectCommand}"
                 Content="Select" />
         </StackPanel>

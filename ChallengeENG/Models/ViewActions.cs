@@ -3,6 +3,9 @@ using Autodesk.Revit.UI;
 
 namespace ChallengeENG.Models
 {
+    /// <summary>
+    /// Logic related to the current view
+    /// </summary>
     public class ViewActions
     {
         private readonly UIDocument _uiDocument;

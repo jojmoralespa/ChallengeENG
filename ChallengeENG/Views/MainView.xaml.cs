@@ -2,9 +2,6 @@
 
 namespace ChallengeENG.Views
 {
-    /// <summary>
-    /// Lógica de interacción para MainView.xaml
-    /// </summary>
     public partial class MainView
     {
         public MainView(MainViewModel mainViewModel)

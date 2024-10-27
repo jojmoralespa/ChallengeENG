@@ -1,9 +1,11 @@
 ﻿using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
-using System.Collections.ObjectModel;
 
 namespace ChallengeENG.Models
 {
+    /// <summary>
+    /// All the logic related to Elements in view ( isolate and select elements)
+    /// </summary>
     public class ElementActions
     {
         private readonly UIDocument _uiDocument;
@@ -19,10 +21,9 @@ namespace ChallengeENG.Models
 
             uiDocument.Selection.SetElementIds(elements);
         }
-
         public void IsolateElements(ICollection<ElementId> elements)
         {
-            using var transaction = new Transaction(_uiDocument.Document, "Get elements");
+            using var transaction = new Transaction(_uiDocument.Document, "isolate elements");
 
             transaction.Start();
 
