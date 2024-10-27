@@ -13,24 +13,10 @@ namespace ChallengeENG.Models
         }
 
         /// <summary>
-        /// Counts the walls in revit
+        /// Get an diccionary that retrieve the parameternames with all its vallues, and each value with a List of Element Id that has this paramete with this value
         /// </summary>
-        public int CountWalls()
-        {
-            using var transaction = new Transaction(_uiDocument.Document, "Count walls");
 
-            transaction.Start();
-            var document = _uiDocument.Document;
-            var walls = new FilteredElementCollector(document, document.ActiveView.Id)
-                .WhereElementIsNotElementType()
-                .OfClass(typeof(Wall))
-                .ToList();
-            transaction.Commit();
-
-            return walls.Count;
-        }
-
-        public ICollection<Element> getAllModelElements()
+        public Dictionary<string, Dictionary<string, List<ElementId>>> GetAllModelElements()
         {
             using var transaction = new Transaction(_uiDocument.Document, "Get elements");
 
@@ -43,24 +29,28 @@ namespace ChallengeENG.Models
             .ToList();
 
             var parametersWithElementValues = elements
-                .SelectMany(element => element.Parameters.Cast<Parameter>()
-                .Where(param => param.Definition != null && param.HasValue)) // Filtramos los parámetros válidos
-                .GroupBy(param => param.Definition.Name) // Agrupamos por el nombre del parámetro
-                    .ToDictionary(
-                        group => group.Key, // Nombre del parámetro como clave
-                        group => group
-                            .GroupBy(param => param.AsValueString() ?? "") // Agrupamos por valor del parámetro
-                            .ToDictionary(
-                                paramGroup => paramGroup.Key ?? "Undefined", // Valor del parámetro como clave
-                                paramGroup => paramGroup
-                                    .Select(param => param.Element.Id) // Lista de ElementId
-                                    .ToList()
-                            )
-                    );
+                .SelectMany(element => element.GetOrderedParameters()
+                    .Where(param => param.Definition != null && param.HasValue)
+                    .Select(param => new
+                    {
+                        ParameterName = param.Definition.Name,
+                        ParameterValue = param.AsValueString() ?? "",
+                        ElementId = element.Id
+                    }))
+                .GroupBy(x => x.ParameterName)
+                .ToDictionary(
+                    group => group.Key,
+                    group => group
+                        .GroupBy(x => x.ParameterValue)
+                        .ToDictionary(
+                            valueGroup => valueGroup.Key,
+                            valueGroup => valueGroup.Select(x => x.ElementId).ToList()
+                        )
+                );
 
             transaction.Commit();
 
-            return elements;
+            return parametersWithElementValues;
         }
     }
 }

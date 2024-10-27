@@ -634,11 +634,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\johan.morales\\proyectos\\test revit api\\TestENG\\TestENG\\ChallengeENG.csproj",
+      "projectUniqueName": "C:\\Users\\johan.morales\\proyectos\\test revit api\\ChallengeENG\\ChallengeENG\\ChallengeENG.csproj",
       "projectName": "ChallengeENG",
-      "projectPath": "C:\\Users\\johan.morales\\proyectos\\test revit api\\TestENG\\TestENG\\ChallengeENG.csproj",
+      "projectPath": "C:\\Users\\johan.morales\\proyectos\\test revit api\\ChallengeENG\\ChallengeENG\\ChallengeENG.csproj",
       "packagesPath": "C:\\Users\\johan.morales\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\johan.morales\\proyectos\\test revit api\\TestENG\\TestENG\\obj\\",
+      "outputPath": "C:\\Users\\johan.morales\\proyectos\\test revit api\\ChallengeENG\\ChallengeENG\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

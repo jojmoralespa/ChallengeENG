@@ -13,13 +13,15 @@ namespace ChallengeENG.DependencyInjection
             var serviceCollection = new ServiceCollection();
 
             serviceCollection.AddSingleton(uiDocument);
+
             //Models
             serviceCollection.AddSingleton<ModelScanner>();
             serviceCollection.AddSingleton<ElementActions>();
             serviceCollection.AddSingleton<ViewActions>();
-            //serviceCollection.AddSingleton<ViewActions>();
+            
             //ViewModels
             serviceCollection.AddSingleton<MainViewModel>();
+
             //Views
             serviceCollection.AddSingleton<MainView>();
 
