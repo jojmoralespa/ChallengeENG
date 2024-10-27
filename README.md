@@ -3,7 +3,7 @@
 # Setup instructions
 if you compile the solution, the addin automatically will be installed inside your folder of addins ( in this case will be installed in 2023 version, there is one version for 2020 in another branch of this repository).
 
-Compile the solution.
+if your're using Visual Studio 2022 , you can compile your solution with:
 
 ```bash
   Ctrl + B
